@@ -30,6 +30,16 @@ handleClick = () => {
     author: randomQuote.author
   })
 }
+// Function to get a random color from R: 0-154, G: 0-154, B: 0-154
+
+getRandomColor(){
+  const color = `rgb(
+    ${Math.floor(Math.random() * 155)},
+    ${Math.floor(Math.random() * 155)},
+    ${Math.floor(Math.random() * 155)}
+  )`;
+  return color;
+}
 
   render(){
 
@@ -38,6 +48,7 @@ handleClick = () => {
     return (
       <div>
         <QuoteBox
+        color = {this.getRandomColor(155)}
         quote = {this.state.quote}
         author = {this.state.author} 
         handleClick = {this.handleClick} />
